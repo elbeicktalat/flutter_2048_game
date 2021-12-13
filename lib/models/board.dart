@@ -137,7 +137,7 @@ class Board {
   }
 
   bool canMerge(Tile a, Tile b) {
-    return (b.isEmpty && !a.isEmpty) || (!a.isEmpty && a == b);
+    return !a.canMerge && ((b.isEmpty && !a.isEmpty) || (!a.isEmpty && a == b));
   }
 
   void merge(Tile a, Tile b) {

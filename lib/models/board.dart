@@ -19,8 +19,7 @@ class Board {
 
     score = 0;
     resetCanMerge();
-    randomTile();
-    randomTile();
+    randomTiles();
   }
 
   Tile getTile(int row, int column) {
@@ -42,6 +41,16 @@ class Board {
     int index = random.nextInt(tiles.length);
     tiles[index].value = random.nextInt(9) == 0 ? 4 : 2;
     tiles.removeAt(index);
+  }
+
+  void randomTiles() {
+    Random random = Random();
+    int index = random.nextInt(9) == 0 ? 3 : 2;
+    if (index == 3) {
+      List.generate(3, (_) => randomTile());
+    } else {
+      List.generate(2, (_) => randomTile());
+    }
   }
 
   bool canMoveLeft() {

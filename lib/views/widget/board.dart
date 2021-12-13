@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:game_2048/models/board.dart';
 import 'package:game_2048/utils/colors.dart';
+import 'package:game_2048/utils/query_data.dart';
 import 'package:game_2048/views/widget/tile.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -33,7 +34,6 @@ class _BoardWidgetState extends State<BoardWidget> {
   }
 
   Iterable<Widget> getRenderedTiles() {
-    double tileSize = ((MediaQuery.of(context).size.width - 32.0) - 8.0) / 4;
     List<List<Widget>> tileWidgets = List.generate(4, (row) {
       return List.generate(4, (column) {
         return Positioned(
@@ -50,9 +50,7 @@ class _BoardWidgetState extends State<BoardWidget> {
 
   @override
   Widget build(BuildContext context) {
-    double boardSize = MediaQuery.of(context).size.width - 16.0 * 2;
-    double toggleWidth = MediaQuery.of(context).size.width * 0.2;
-    double toggleHeight = MediaQuery.of(context).size.height * 0.08;
+    queryData = MediaQuery.of(context);
 
     List<Widget> children = [];
     children.addAll(getRenderedTiles());

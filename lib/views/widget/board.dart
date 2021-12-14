@@ -102,116 +102,114 @@ class _BoardWidgetState extends State<BoardWidget> {
     }
 
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 18.0, horizontal: 28.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('2048', style: Theme.of(context).textTheme.headline1),
-                  Text(
-                    'Join the tiles, get to 2048!',
-                    style: GoogleFonts.sourceSansPro(
-                      fontSize: 24.0,
-                      color: Colors.grey[600],
-                    ),
+        Column(
+          children: [
+            Text(
+              '2048',
+              style: Theme.of(context).textTheme.headline1!.copyWith(
+                    fontWeight: FontWeight.bold,
                   ),
-                  const SizedBox(height: 8.0),
-                  Text(
-                    'How to play?',
-                    style: GoogleFonts.sourceSansPro(
-                      fontSize: 18.0,
-                      decoration: TextDecoration.underline,
-                      color: Colors.grey[800],
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Row(
+            ),
+            const SizedBox(height: 18.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  width: toggleWidth,
+                  height: toggleHeight,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        width: toggleWidth,
-                        height: toggleHeight,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Score',
-                              style: Theme.of(context).textTheme.headline5,
-                            ),
-                            Text(
-                              _board.score.toString(),
-                              style: GoogleFonts.sourceSansPro(
-                                fontSize: 36.0,
-                              ),
-                            ),
-                          ],
-                        ),
-                        decoration: BoxDecoration(
-                          color: tileColors[0],
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
+                      Text(
+                        'Score',
+                        style: Theme.of(context).textTheme.headline6,
                       ),
-                      const SizedBox(width: 18.0),
-                      Container(
-                        width: toggleWidth,
-                        height: toggleHeight,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Record',
-                              style: Theme.of(context).textTheme.headline5,
-                            ),
-                            Text(
-                              _board.score.toString(),
-                              style: GoogleFonts.sourceSansPro(
-                                fontSize: 36.0,
-                              ),
-                            ),
-                          ],
-                        ),
-                        decoration: BoxDecoration(
-                          color: tileColors[0],
-                          borderRadius: BorderRadius.circular(12.0),
+                      Text(
+                        _board.score.toString(),
+                        style: GoogleFonts.sourceSansPro(
+                          fontSize: 28.0,
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 24.0),
-                  SizedBox(
-                    width: toggleWidth,
-                    height: toggleHeight,
-                    child: ElevatedButton(
-                      onPressed: () => newGame(),
-                      child: Text(
-                        'Start New',
+                  decoration: BoxDecoration(
+                    color: tileColors[0],
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+                Container(
+                  width: toggleWidth,
+                  height: toggleHeight,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Record',
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
+                      Text(
+                        _board.score.toString(),
                         style: GoogleFonts.sourceSansPro(
-                          fontSize: 24.0,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 28.0,
                         ),
                       ),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                          const Color(0xff8f7a66),
-                        ),
+                    ],
+                  ),
+                  decoration: BoxDecoration(
+                    color: tileColors[0],
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 18.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: toggleWidth,
+                  height: toggleHeight,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Undo',
+                      style: GoogleFonts.sourceSansPro(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  )
-                ],
-              ),
-            ],
-          ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        const Color(0xff8f7a66),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: toggleWidth,
+                  height: toggleHeight,
+                  child: ElevatedButton(
+                    onPressed: () => newGame(),
+                    child: Text(
+                      'New Game',
+                      style: GoogleFonts.sourceSansPro(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        const Color(0xff8f7a66),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
-        const SizedBox(height: 28.0),
         Container(
           width: boardSize,
           height: boardSize,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:game_2048/utils/colors.dart';
-import 'package:game_2048/views/widget/board.dart';
+import 'package:game_2048/views/board_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class _HomePageState extends State<Home> {
       backgroundColor: backgroundColor,
       body: const SafeArea(
         child: Center(
-          child: BoardWidget(),
+          child: BoardScreen(),
         ),
       ),
     );

@@ -10,9 +10,10 @@ class TileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     int tileValue = tile.value;
+    int digitsCount = tile.value.toString().length;
     return Container(
-      width: tileSize - 10.0 * 2,
-      height: tileSize - 10.0 * 2,
+      width: tileSize - 6.0 * 2,
+      height: tileSize - 6.0 * 2,
       decoration: BoxDecoration(
         color: tileColors[tile.value],
         borderRadius: BorderRadius.circular(8.0),
@@ -21,7 +22,13 @@ class TileWidget extends StatelessWidget {
         child: Text(
           (tileValue == 0) ? '' : tileValue.toString(),
           style: TextStyle(
-            fontSize: 68.0,
+            fontSize: (digitsCount == 4)
+                ? 28.0
+                : (digitsCount == 3)
+                    ? 38.0
+                    : (digitsCount == 2)
+                        ? 48.0
+                        : 58.0,
             fontWeight: FontWeight.bold,
             color: (tileValue <= 4) ? const Color(0xff776e65) : Colors.white,
           ),

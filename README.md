@@ -1,16 +1,22 @@
 # game_2048
 
-A new Flutter project.
+A simple implementation of 2048 puzzle game 🎮, using pure flutter.
 
-## Getting Started
+## About project
 
-This project is a starting point for a Flutter application.
+This project is a hard coding of a puzzle game, so I didn't care about responsive design, even the design at self, so the only thing I had cared about is the logic behind some thing like this.
 
-A few resources to get you started if this is your first Flutter project:
+Maybe in the future I'll add some animation and makeing this project responsive and adaptive.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials, samples, guidance on
-mobile development, and a full API reference.
+Follow me on:
+- [GitHub](https://github.com/elbeicktalat)
+- [Twitter](https://twitter.com/elbeicktalat)
+- [Linkedin](https://www.linkedin.com/in/elbeicktalat)
+
+Or email me directly on [My Email](mailto:talatelbeick@gmail.com)
+
+<div>
+<img src="screenshot.jpg" width="200"/>
+<img src="game-over.jpg" width="200"/>
+</div>
